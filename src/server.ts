@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 const app = express();
 // We need a database of quotes 
@@ -32,7 +33,8 @@ ie. It sends back an object like the one below:
 }
 */
 
-
+// Allow other domains to make requests to our server
+app.use(cors());
 // app.get('/', (_, responseObj) => {
 //   responseObj.send('Hi there from the server!');
 // });
