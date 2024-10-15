@@ -7,9 +7,11 @@ function outputWeatherData(weatherData) {
     const cityOutput = document.querySelector('#city-name');
     const tempOutput = document.querySelector('#temp');
     const windOutput = document.querySelector('#wind');
+    const humidityOutput = document.querySelector('#humidity');
     cityOutput.innerText = weatherData.name;
     tempOutput.innerHTML = `Temp: ${Math.round(weatherData.main.temp)}&deg;`;
-    windOutput.innerText = weatherData.wind.speed + 'mph';
+    windOutput.innerText = `Wind Speed: ${weatherData.wind.speed} mph`;
+    humidityOutput.innerText = `Humidity: ${weatherData.main.humidity}%`;
 }
 async function getWeatherData(eventObj) {
     eventObj.preventDefault();

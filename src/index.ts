@@ -9,12 +9,14 @@ const cityForm = document.querySelector('#city-form');
 
 function outputWeatherData(weatherData) {
   const cityOutput = document.querySelector<HTMLHeadingElement>('#city-name');
-  const tempOutput = document.querySelector<HTMLHeadingElement>('#temp');
-  const windOutput = document.querySelector<HTMLHeadingElement>('#wind');
+  const tempOutput = document.querySelector<HTMLParagraphElement>('#temp');
+  const windOutput = document.querySelector<HTMLParagraphElement>('#wind');
+  const humidityOutput = document.querySelector< HTMLParagraphElement>('#humidity');
 
   cityOutput.innerText = weatherData.name;
   tempOutput.innerHTML = `Temp: ${Math.round(weatherData.main.temp)}&deg;`;
-  windOutput.innerText = weatherData.wind.speed + 'mph';
+  windOutput.innerText = `Wind Speed: ${weatherData.wind.speed} mph`;
+  humidityOutput.innerText = `Humidity: ${weatherData.main.humidity}%`;
 }
 
 async function getWeatherData(eventObj) {
